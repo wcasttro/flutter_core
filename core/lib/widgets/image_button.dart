@@ -1,5 +1,4 @@
-import 'package:core/style/custom_colors.dart';
-import 'package:core/style/text_style.dart';
+import 'package:core/style/extensions.dart';
 import 'package:core/widgets/custom_image.dart';
 import 'package:flutter/material.dart';
 
@@ -21,9 +20,9 @@ class ImageButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: buttonColor,
-          foregroundColor: labelSecondaryButtonColor,
-          textStyle: fontPrimaryButton,
+          backgroundColor: context.colors.neutralColors.neutralButtonColor,
+          foregroundColor: context.colors.neutralColors.neutralButtonColor,
+          textStyle: context.typography.smallBody,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40.0),
           ),

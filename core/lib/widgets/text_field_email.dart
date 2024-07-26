@@ -1,4 +1,3 @@
-import 'package:core/util/validator.dart';
 import 'package:core/widgets/text_form_field.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +16,7 @@ class TextFieldEmail extends StatelessWidget {
     return CustomTextField(
       textHint: 'email@email.com',
       keyboardType: TextInputType.emailAddress,
-      validator: validateEmail,
+      // validator: validateEmail,
       textController: controller,
     );
   }

@@ -1,6 +1,4 @@
-import 'package:core/style/custom_colors.dart';
-import 'package:core/style/custom_radius_border.dart';
-import 'package:core/style/text_style.dart';
+import 'package:core/style/extensions.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -42,12 +40,12 @@ class CustomTextField extends StatelessWidget {
             : AutovalidateMode.disabled,
         decoration: InputDecoration(
           hintText: textHint,
-          hintStyle: fontHintTextField,
+          hintStyle: context.typography.body,
           suffix: sufixIcon,
-          fillColor: textFieldFillColor,
+          fillColor: context.colors.neutralColors.neutralColor,
           filled: true,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(textFieldRadius),
+            borderRadius: BorderRadius.circular(context.radius.small),
           ),
           errorText: errorText,
         ),

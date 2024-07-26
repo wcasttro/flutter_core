@@ -1,5 +1,3 @@
-import 'package:core/style/custom_colors.dart';
-import 'package:core/style/text_style.dart';
 import 'package:flutter/material.dart';
 
 class AppBarBack extends StatefulWidget {
@@ -24,20 +22,19 @@ class _AppBarBackState extends State<AppBarBack> {
               width: 130,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
-                color: secondaryColor,
+                color: Colors.black,
               ),
-              child: const Padding(
-                padding: EdgeInsets.all(8.0),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: const [
                     Icon(
                       Icons.arrow_back_ios,
                       color: Colors.white,
                     ),
                     Text(
                       'Voltar',
-                      style: fontAppBar,
                     ),
                   ],
                 ),

@@ -55,6 +55,7 @@ class AuthClientImpl implements AuthClient {
     }
   }
 
+  @override
   void verifyStatusUser({
     required Function() userAutenticated,
     required Function() userNotAuthenticated,

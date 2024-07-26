@@ -1,5 +1,4 @@
-import 'package:core/style/custom_colors.dart';
-import 'package:core/style/text_style.dart';
+import 'package:core/style/extensions.dart';
 import 'package:flutter/material.dart';
 
 class SecondaryButton extends StatelessWidget {
@@ -20,12 +19,12 @@ class SecondaryButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: primaryColor,
-          foregroundColor: labelSecondaryButtonColor,
-          textStyle: fontPrimaryButton,
-          shape: const RoundedRectangleBorder(
+          backgroundColor: context.colors.primaryColors.main,
+          foregroundColor: context.colors.neutralColors.neutralButtonColor,
+          textStyle: context.typography.smallTitle,
+          shape: RoundedRectangleBorder(
             side: BorderSide(
-              color: buttonColor,
+              color: context.colors.neutralColors.neutralButtonColor,
               width: 2.0,
             ),
           ),

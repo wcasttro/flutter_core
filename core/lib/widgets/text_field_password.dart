@@ -1,11 +1,10 @@
-import 'package:core/util/validator.dart';
 import 'package:core/widgets/text_form_field.dart';
 import 'package:flutter/material.dart';
 
 class TextFieldPassword extends StatefulWidget {
   const TextFieldPassword({
     super.key,
-    this.isObscure = true,
+    required this.isObscure,
     required this.onChanged,
     this.controller,
   });
@@ -19,12 +18,11 @@ class TextFieldPassword extends StatefulWidget {
 }
 
 class _TextFieldPasswordState extends State<TextFieldPassword> {
-  late bool _isObscure;
+  bool isObscure = true;
 
   @override
   void initState() {
-    _isObscure = widget.isObscure;
-
+    isObscure = widget.isObscure;
     super.initState();
   }
 
@@ -34,13 +32,13 @@ class _TextFieldPasswordState extends State<TextFieldPassword> {
       textHint: '*********',
       onChanged: widget.onChanged,
       keyboardType: TextInputType.visiblePassword,
-      obscureText: widget.isObscure,
+      obscureText: isObscure,
       textController: widget.controller,
-      validator: validatePassword,
+      // validator: validatePassword,
       sufixIcon: GestureDetector(
         onTap: () {
           setState(() {
-            _isObscure = _isObscure;
+            isObscure = !isObscure;
           });
         },
         child: widget.isObscure

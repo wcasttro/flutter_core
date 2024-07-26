@@ -7,21 +7,21 @@ class CustomErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(
+          Icon(
             Icons.error_outline,
             color: Colors.red,
             size: 50.0,
           ),
-          const SizedBox(height: 10.0),
-          const Text(
+          SizedBox(height: 10.0),
+          Text(
             'Ocorreu um Erro!',
             style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 10.0),
+          SizedBox(height: 10.0),
           // Text(
           //   errorMessage,
           //   textAlign: TextAlign.center,
