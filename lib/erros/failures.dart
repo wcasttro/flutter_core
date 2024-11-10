@@ -7,6 +7,7 @@ abstract class Failure extends Equatable {
 }
 
 class ServerFailure extends Failure {
+  @override
   final String? errorMessage;
 
   const ServerFailure({this.errorMessage});

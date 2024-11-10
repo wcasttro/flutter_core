@@ -7,8 +7,8 @@ class PageWidget extends StatefulWidget {
   final Widget? bottomBar;
   final Widget? floatingActionButton;
   const PageWidget({
-    super.key,
     required this.body,
+    super.key,
     this.isAppBar = true,
     this.bottomBar,
     this.floatingActionButton,

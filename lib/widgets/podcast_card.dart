@@ -5,7 +5,7 @@ class PodCastCard extends StatelessWidget {
   final String path;
   final void Function()? onTap;
 
-  const PodCastCard({super.key, required this.path, required this.onTap});
+  const PodCastCard({required this.path, required this.onTap, super.key});
 
   @override
   Widget build(BuildContext context) {

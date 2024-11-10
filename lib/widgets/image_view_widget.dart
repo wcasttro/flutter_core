@@ -8,8 +8,8 @@ class ImageViewWidget extends StatefulWidget {
   final String? package;
   final Color? color;
   const ImageViewWidget({
-    super.key,
     required this.path,
+    super.key,
     this.height,
     this.width,
     this.color,

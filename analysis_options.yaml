@@ -2,3 +2,18 @@ include: package:flutter_lints/flutter.yaml
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
+linter:
+  rules:
+    - implementation_imports
+    - always_declare_return_types
+    - always_put_required_named_parameters_first
+    - always_use_package_imports
+    - require_trailing_commas
+    - avoid_redundant_argument_values
+    - prefer_single_quotes
+
+analyzer:
+  errors:
+    # Exemplo de configuração de erros (aviso ou erro)
+    missing_return: error  # Considera falta de retorno como erro
+    todo: warning          # Marca TODOs como aviso

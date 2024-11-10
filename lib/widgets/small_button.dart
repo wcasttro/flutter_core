@@ -9,12 +9,12 @@ class SmallButton extends StatelessWidget {
   final double sizeHeight;
   final String pathImage;
   const SmallButton({
+    required this.onPressed,
+    required this.pathImage,
     super.key,
     this.backgroundColor,
-    required this.onPressed,
     this.sizeHeight = 55,
     this.sizeWith = 100,
-    required this.pathImage,
   });
 
   @override
@@ -25,14 +25,16 @@ class SmallButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(
-              backgroundColor ?? context.colors.primaryColors.main),
+          backgroundColor: WidgetStateProperty.all(
+            backgroundColor ?? context.colors.primaryColors.main,
+          ),
         ),
         child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: ImageViewWidget(
-              path: pathImage,
-            )),
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: ImageViewWidget(
+            path: pathImage,
+          ),
+        ),
       ),
     );
   }

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class ImageButton extends StatelessWidget {
   const ImageButton({
-    super.key,
     required this.path,
     required this.onPressed,
+    super.key,
   });
 
   final String path;

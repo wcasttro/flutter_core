@@ -7,11 +7,11 @@ class PrimaryButton extends StatelessWidget {
   final double sizeHeight;
   final String text;
   const PrimaryButton({
-    super.key,
     required this.onPressed,
+    required this.text,
+    super.key,
     this.sizeHeight = 55,
     this.sizeWith = double.infinity,
-    required this.text,
   });
 
   @override

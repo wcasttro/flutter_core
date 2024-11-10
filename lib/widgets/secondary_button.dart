@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class SecondaryButton extends StatelessWidget {
   const SecondaryButton({
-    super.key,
     required this.label,
     required this.onPressed,
+    super.key,
   });
 
   final String label;

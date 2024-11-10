@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class TextFieldPassword extends StatefulWidget {
   const TextFieldPassword({
-    super.key,
     required this.isObscure,
     required this.onChanged,
+    super.key,
     this.controller,
   });
 

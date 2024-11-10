@@ -14,18 +14,18 @@ class AdMod {
 
   void createBannerAd() {
     _bannerAd = BannerAd(
-        size: AdSize.banner,
-        adUnitId: bannerIdAdMob,
-        listener: BannerAdListener(
-          onAdLoaded: (Ad ad) {},
-          onAdFailedToLoad: (Ad ad, LoadAdError error) {
-            ad.dispose();
-          },
-          onAdOpened: (Ad ad) => log('$BannerAd onAdOpened.'),
-          onAdClosed: (Ad ad) => log('$BannerAd onAdClosed.'),
-        ),
-        request: const AdRequest())
-      ..load();
+      size: AdSize.banner,
+      adUnitId: bannerIdAdMob,
+      listener: BannerAdListener(
+        onAdLoaded: (Ad ad) {},
+        onAdFailedToLoad: (Ad ad, LoadAdError error) {
+          ad.dispose();
+        },
+        onAdOpened: (Ad ad) => log('$BannerAd onAdOpened.'),
+        onAdClosed: (Ad ad) => log('$BannerAd onAdClosed.'),
+      ),
+      request: const AdRequest(),
+    )..load();
   }
 
   Widget banner() {
@@ -41,16 +41,17 @@ class AdMod {
 
   void createInterstitialAd() {
     InterstitialAd.load(
-        adUnitId: interstitialAdMob,
-        request: const AdRequest(),
-        adLoadCallback: InterstitialAdLoadCallback(
-          onAdLoaded: (InterstitialAd ad) {
-            _interstitialAd = ad;
-          },
-          onAdFailedToLoad: (LoadAdError error) {
-            _interstitialAd = null;
-          },
-        ));
+      adUnitId: interstitialAdMob,
+      request: const AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (InterstitialAd ad) {
+          _interstitialAd = ad;
+        },
+        onAdFailedToLoad: (LoadAdError error) {
+          _interstitialAd = null;
+        },
+      ),
+    );
   }
 
   void showInterstitialAd() {

@@ -22,7 +22,7 @@ class CustomInterceptors extends Interceptor {
   }
 
   @override
-  Future onError(DioError err, ErrorInterceptorHandler handler) async {
+  Future onError(DioException err, ErrorInterceptorHandler handler) async {
     log('----------------------------------------------------------------');
 
     log('ERROR [${err.response?.statusCode}] => PATH: ${err.requestOptions.path}');

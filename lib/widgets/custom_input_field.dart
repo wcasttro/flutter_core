@@ -14,7 +14,7 @@ class CustomInputField extends StatefulWidget {
   final String? errorText;
 
   const CustomInputField({
-    Key? key,
+    super.key,
     this.controller,
     this.isObscure = false,
     this.style,
@@ -26,7 +26,7 @@ class CustomInputField extends StatefulWidget {
     this.prefixIcon,
     this.sufixIcon,
     this.errorText,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomInputField> createState() => _CustomInputFieldState();
@@ -49,10 +49,8 @@ class _CustomInputFieldState extends State<CustomInputField> {
             prefixIconConstraints:
                 const BoxConstraints(minHeight: 26, minWidth: 26),
             border: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(8)),
-                borderSide: BorderSide(
-                  width: 1,
-                )),
+              borderRadius: BorderRadius.all(Radius.circular(8)),
+            ),
             fillColor: Colors.white,
             filled: true,
             suffixIcon: Padding(

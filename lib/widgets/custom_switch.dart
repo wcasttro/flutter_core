@@ -4,10 +4,10 @@ class CustomSwitch extends StatefulWidget {
   final bool isSwitched;
   final Function(bool)? onChange;
   const CustomSwitch({
-    Key? key,
     required this.isSwitched,
     required this.onChange,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<CustomSwitch> createState() => _CustomSwitchState();

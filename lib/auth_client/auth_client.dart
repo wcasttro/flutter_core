@@ -1,4 +1,4 @@
-import 'auth_response.dart';
+import 'package:core/auth_client/auth_response.dart';
 
 abstract class AuthClient {
   Future<AuthResponse> signInWithEmailAndPassword({

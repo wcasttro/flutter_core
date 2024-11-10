@@ -1,21 +1,28 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-import 'auth_client.dart';
-import 'auth_response.dart';
+import 'package:core/auth_client/auth_client.dart';
+import 'package:core/auth_client/auth_response.dart';
 
 class AuthClientImpl implements AuthClient {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   @override
-  Future<AuthResponse> signInWithEmailAndPassword(
-      {required String email, required String password}) async {
+  Future<AuthResponse> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
     try {
       UserCredential user = await _auth.signInWithEmailAndPassword(
-          email: email, password: password);
+        email: email,
+        password: password,
+      );
 
-      return AuthResponse(data: user.user, sucess: true);
+      return AuthResponse(
+        data: user.user,
+        sucess: true,
+      );
     } on FirebaseAuthException catch (e) {
       return AuthResponse(
         statusCode: e.code,
@@ -25,15 +32,25 @@ class AuthClientImpl implements AuthClient {
   }
 
   @override
-  Future<AuthResponse> createUserWithEmailAndPassword(
-      {required String email, required String password}) async {
+  Future<AuthResponse> createUserWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
     try {
       UserCredential user = await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
+        email: email,
+        password: password,
+      );
 
-      return AuthResponse(data: user.user, sucess: true);
+      return AuthResponse(
+        data: user.user,
+        sucess: true,
+      );
     } on FirebaseAuthException catch (e) {
-      return AuthResponse(statusCode: e.code, statusMessage: e.message);
+      return AuthResponse(
+        statusCode: e.code,
+        statusMessage: e.message,
+      );
     }
   }
 
@@ -42,16 +59,26 @@ class AuthClientImpl implements AuthClient {
     try {
       final GoogleSignInAccount? googleSignInAccount =
           await _googleSignIn.signIn();
+
       final GoogleSignInAuthentication googleSignInAuthentication =
           await googleSignInAccount!.authentication;
+
       final AuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleSignInAuthentication.accessToken,
         idToken: googleSignInAuthentication.idToken,
       );
+
       UserCredential user = await _auth.signInWithCredential(credential);
-      return AuthResponse(data: user.user, sucess: true);
+
+      return AuthResponse(
+        data: user.user,
+        sucess: true,
+      );
     } on FirebaseAuthException catch (e) {
-      return AuthResponse(statusCode: e.code, statusMessage: e.message);
+      return AuthResponse(
+        statusCode: e.code,
+        statusMessage: e.message,
+      );
     }
   }
 

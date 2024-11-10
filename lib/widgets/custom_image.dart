@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class CustomImage extends StatelessWidget {
   const CustomImage({
-    Key? key,
     required this.path,
+    super.key,
     this.width,
     this.isNetWork = false,
-  }) : super(key: key);
+  });
 
   final String path;
   final double? width;

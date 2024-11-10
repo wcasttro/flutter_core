@@ -5,9 +5,9 @@ class TextButtonWidget extends StatefulWidget {
   final Function() onPressed;
   final String text;
   const TextButtonWidget({
-    super.key,
     required this.onPressed,
     required this.text,
+    super.key,
   });
 
   @override
