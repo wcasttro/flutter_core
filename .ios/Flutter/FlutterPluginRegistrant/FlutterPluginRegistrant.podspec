@@ -24,4 +24,5 @@ Depends on all your plugins, and provides a function to register them.
   s.dependency 'firebase_remote_config'
   s.dependency 'google_mobile_ads'
   s.dependency 'google_sign_in_ios'
+  s.dependency 'webview_flutter_wkwebview'
 end
