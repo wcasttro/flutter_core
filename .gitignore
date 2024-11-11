@@ -7,3 +7,6 @@ pubspec.lock
 .android/local.properties
 .android/Flutter/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
 .dart_tool/package_config_subset
+.flutter-plugins
+.flutter-plugins-dependencies
+.android/local.properties
