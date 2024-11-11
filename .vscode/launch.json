@@ -21,5 +21,9 @@
             "type": "dart",
             "flutterMode": "release"
         }
-    ]
+    ],
+    "dart.flutterSdkPaths": [
+        "/Users/werthen.castro/fvm/versions"
+    ],
+
 }
